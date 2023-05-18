@@ -14,10 +14,7 @@ export class RoomsServiceService {
   }
 
   getRooms() {
-    const headers = new HttpHeaders({'token': '12345'});
-    return this.http.get<RoomList[]>('/api/rooms', {
-      headers: headers
-    });
+    return this.http.get<RoomList[]>('/api/rooms');
   }
 
   addRoom(room: RoomList) {
