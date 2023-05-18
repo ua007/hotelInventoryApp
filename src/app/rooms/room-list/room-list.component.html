@@ -1,0 +1,28 @@
+<table class="table">
+    <tr>
+        <th>Index</th>
+        <th>Room Id</th>
+        <th>Room Type</th>
+        <th>Room Amenities</th>
+        <th>Room Price</th>
+        <th>Room Photos</th>
+        <th>Checkin Time</th>
+        <th>Checkout Time</th>
+        <th>
+            Select Room
+        </th>
+    </tr>
+    <tr *ngFor="let roomItem of rooms;let i = index;">
+        <td>{{i}}</td>
+        <td>{{roomItem.roomNumber}}</td>
+        <td>{{roomItem.roomType | titlecase}}</td>
+        <td>{{roomItem.amenities | uppercase}}</td>
+        <td>{{roomItem.price | currency : 'INR'}}</td>
+        <td><img src="roomItem.photos"/></td>
+        <td>{{roomItem.checkinTime | date}}</td>
+        <td>{{roomItem.checkoutTime | date}}</td>
+        <td>
+            <button class="btn btn-warning" (click)="emitSelectedRoom(roomItem)">Select</button>
+        </td>
+    </tr>
+</table>

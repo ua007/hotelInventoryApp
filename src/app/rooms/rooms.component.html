@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<p>{{roomName}} rooms:</p>
+
+<div [hidden]="hide_rooms">
+    Number of rooms:
+    <div [innerText]="room_number"></div>
+</div>
+<div *ngIf="room.available_rooms > 0">
+    {{room.available_rooms}}
+</div>
+<button class="btn btn-primary" (click)="addRoom()">Add room</button>
+<br>
+<button class="btn btn-danger" (click)="toggle()">Toggle</button>
+<br/>
+<div *ngIf="selected_room">
+    {{selected_room | json}}
+</div>
+<h1>{{totalBytes}}</h1>
+<div *ngIf="hide_rooms">
+    <app-room-list [rooms]="rooms" (selectedRoom) = "selectedRoom($event)"></app-room-list>
+    <button class="btn btn-warning" (click)="editRoom()">Edit room</button>
+    <button class="btn btn-danger" (click)="deleteRoom()">Delete room</button>
+</div>
