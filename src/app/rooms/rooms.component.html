@@ -9,7 +9,7 @@
 <div *ngIf="room.available_rooms > 0">
     {{room.available_rooms}}
 </div>
-<button class="btn btn-primary" (click)="addRoom()">Add room</button>
+<button class="btn btn-primary" routerLink="/rooms/add">Add room</button>
 <br>
 <button class="btn btn-danger" (click)="toggle()">Toggle</button>
 <br/>

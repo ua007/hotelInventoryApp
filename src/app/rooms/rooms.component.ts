@@ -17,7 +17,7 @@ export class RoomsComponent implements OnInit, AfterViewInit{
 
   roomName = 'premium'
   room_number = 10
-  hide_rooms = false
+  hide_rooms = true
   selected_room!: RoomList;
   room = {
     total_rooms: 20,
@@ -94,7 +94,8 @@ export class RoomsComponent implements OnInit, AfterViewInit{
       price: 900,
       photos: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       checkinTime: new Date('13 May 2023'),
-      checkoutTime: new Date('14 May 2023')
+      checkoutTime: new Date('14 May 2023'),
+      rating: 0
     };
 
     this.rooms_service.addRoom(roomItem).subscribe(roomItemList => {
@@ -110,7 +111,8 @@ export class RoomsComponent implements OnInit, AfterViewInit{
       price: 900,
       photos: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       checkinTime: new Date('13 May 2023'),
-      checkoutTime: new Date('14 May 2023')
+      checkoutTime: new Date('14 May 2023'),
+      rating: 0
     };
 
     this.rooms_service.editRoom(roomItem).subscribe(roomItemList => {

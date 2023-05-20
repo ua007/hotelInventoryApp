@@ -1,0 +1,9 @@
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div  class="form-group">
+        <input appHover type="email" placeholder="User Name" name="name" class="form-control" [(ngModel)]="email"/>
+    </div>
+    <div  class="form-group">
+        <input appHover type="password" placeholder="Password" name="password" class="form-control" [(ngModel)]="password"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Login</button>
+</form>

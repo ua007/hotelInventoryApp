@@ -8,6 +8,7 @@
         <th>Room Photos</th>
         <th>Checkin Time</th>
         <th>Checkout Time</th>
+        <th>Rating</th>
         <th>
             Select Room
         </th>
@@ -21,8 +22,10 @@
         <td><img src="roomItem.photos"/></td>
         <td>{{roomItem.checkinTime | date}}</td>
         <td>{{roomItem.checkoutTime | date}}</td>
+        <td>{{roomItem.rating}}</td>
         <td>
-            <button class="btn btn-warning" (click)="emitSelectedRoom(roomItem)">Select</button>
+            <!-- <button class="btn btn-warning" (click)="emitSelectedRoom(roomItem)">Select</button> -->
+            <button class="btn btn-warning" [routerLink]="['/rooms', roomItem.roomNumber]">Book Room</button>
         </td>
     </tr>
 </table>
