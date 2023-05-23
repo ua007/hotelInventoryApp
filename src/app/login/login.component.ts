@@ -16,9 +16,9 @@ export class LoginComponent {
   }
 
   login(loginForm: NgForm) {
-    if 
-    (this.email === 'admin@gmail.com' && this.password === 'Admin') {
-      this.route.navigate(['/rooms'])
+    if (this.email === 'admin@gmail.com' && this.password === 'Admin') {
+      alert('Login Successful');
+      this.route.navigate(['/rooms']);
       loginForm.reset();
     }
   }
